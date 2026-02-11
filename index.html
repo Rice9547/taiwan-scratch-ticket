@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>新春刮刮樂 | Taiwan Lunar New Year Scratch & Win</title>
+  <meta name="description" content="Experience Taiwan's Lunar New Year scratch ticket tradition! 體驗台灣新年刮刮樂！">
+  <meta property="og:title" content="台灣新春刮刮樂 Taiwan Scratch & Win">
+  <meta property="og:description" content="Try your luck with a traditional Taiwan Lunar New Year scratch ticket! 試試你的運氣！">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <button class="sound-toggle" id="sound-toggle" aria-label="Toggle sound">🔊</button>
+    <div class="title-group">
+      <h1 data-i18n="title">新春刮刮樂</h1>
+      <p class="subtitle" data-i18n="subtitle">台灣新年特別版</p>
+    </div>
+    <div class="lang-toggle" role="radiogroup" aria-label="Language">
+      <button class="lang-btn active" data-lang="zh-TW">中文</button>
+      <button class="lang-btn" data-lang="en-US">EN</button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+    <p class="instructions" data-i18n="instructions">用手指或滑鼠刮開銀色區域</p>
+    <p class="match-rule" data-i18n="matchThree">刮出三個相同圖案即可中獎！</p>
+
+    <div class="ticket" id="ticket">
+      <div class="ticket-header" id="ticket-header">
+        <span class="deco-left">🏮</span>
+        <div>
+          <span data-i18n="title">新春刮刮樂</span>
+          <span class="theme-name" id="theme-name"></span>
+        </div>
+        <span class="deco-right">🏮</span>
+      </div>
+      <div class="ticket-body">
+        <div class="scratch-area">
+          <div class="prize-grid" id="prize-grid"></div>
+          <canvas id="scratch-canvas"></canvas>
+        </div>
+      </div>
+      <div class="ticket-footer">
+        <span data-i18n="ticketSerial">彩券編號</span>:
+        <span id="ticket-serial">TW-2026-LNY-00000</span>
+      </div>
+    </div>
+
+    <div class="result-msg" id="result-msg"></div>
+    <button class="btn-new-ticket" id="btn-new-ticket" data-i18n="newTicket">再來一張</button>
+  </main>
+
+  <!-- Win Overlay -->
+  <div class="win-overlay" id="win-overlay">
+    <div class="win-content">
+      <div class="win-emojis">🎉🧧🎊</div>
+      <h2 data-i18n="youWon">恭喜中獎！</h2>
+      <div class="win-prize-icon" id="win-icon"></div>
+      <div class="win-prize-name" id="win-name"></div>
+      <div class="win-amount" id="win-amount"></div>
+      <button class="btn-new-ticket" id="btn-overlay-new" data-i18n="newTicket">再來一張</button>
+    </div>
+  </div>
+
+  <!-- Cultural Panel -->
+  <section class="cultural-panel">
+    <h3 data-i18n="culturalTitle">你知道嗎？</h3>
+    <p id="cultural-fact"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p data-i18n="footer">本遊戲僅供娛樂及文化教育用途</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
