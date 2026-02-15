@@ -13,7 +13,7 @@ function uniqueRandomNumbers(count, max) {
 
 export function generateGame1() {
   const winNums = uniqueRandomNumbers(3, 39);
-  const shouldWin = Math.random() < 0.30;
+  const shouldWin = Math.random() < 0.36;
 
   let myNums;
   if (shouldWin) {
@@ -61,7 +61,7 @@ export function checkGame1(data) {
 const GAME2_AMOUNTS = [50, 100, 200, 300, 500, 888, 1000, 2000];
 
 export function generateGame2() {
-  const shouldWin = Math.random() < 0.25;
+  const shouldWin = Math.random() < 0.32;
   const cells = [];
 
   if (shouldWin) {
@@ -130,7 +130,7 @@ export function checkGame2(data) {
 const BONUS_SYMBOLS = ['🧧', '🏮', '🎆', '🧨', '🎊'];
 
 export function generateGame3() {
-  const shouldWin = Math.random() < 0.15;
+  const shouldWin = Math.random() < 0.22;
   const bonusPrize = [300, 500, 888, 1000][Math.floor(Math.random() * 4)];
 
   let symbols;
