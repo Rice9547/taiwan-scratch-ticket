@@ -43,7 +43,7 @@ export class ScratchCard {
     ctx.font = '10px sans-serif';
     for (let x = 6; x < w; x += 45) {
       for (let y = 14; y < h; y += 28) {
-        ctx.fillText('NT$', x, y);
+        ctx.fillText('CA$', x, y);
       }
     }
 

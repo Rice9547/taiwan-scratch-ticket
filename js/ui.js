@@ -16,7 +16,7 @@ export function renderGame1(container, data) {
         ${cells.map(c => `
           <div class="g1-cell" data-num="${c.number}">
             <span class="g1-num">${String(c.number).padStart(2, '0')}</span>
-            <span class="g1-prize">NT$${c.prize.toLocaleString()}</span>
+            <span class="g1-prize">CA$${c.prize.toLocaleString()}</span>
           </div>
         `).join('')}
       </div>
@@ -37,7 +37,7 @@ export function renderGame2(container, data) {
   container.innerHTML = `
     <div class="g2-grid">
       ${data.cells.map(amount => `
-        <div class="g2-cell">NT$${amount.toLocaleString()}</div>
+        <div class="g2-cell">CA$${amount.toLocaleString()}</div>
       `).join('')}
     </div>
   `;
@@ -57,7 +57,7 @@ export function renderGame3(container, data) {
     <div class="g3-row">
       ${data.symbols.map(s => `<div class="g3-cell">${s}</div>`).join('')}
     </div>
-    <div class="g3-prize">${t('bonusPrize')}: NT$${data.bonusPrize.toLocaleString()}</div>
+    <div class="g3-prize">${t('bonusPrize')}: CA$${data.bonusPrize.toLocaleString()}</div>
   `;
 }
 
@@ -68,7 +68,7 @@ export function highlightGame3(result) {
 
 // ============ Result overlay ============
 export function showWinOverlay(totalAmount) {
-  document.getElementById('win-total').textContent = `NT$ ${totalAmount.toLocaleString()}`;
+  document.getElementById('win-total').textContent = `CA$ ${totalAmount.toLocaleString()}`;
   document.getElementById('win-overlay').classList.add('visible');
 }
 
@@ -80,7 +80,7 @@ export function showResultMsg(isWin, amount) {
   const msg = document.getElementById('result-msg');
   if (isWin) {
     msg.className = 'result-msg show win';
-    msg.innerHTML = `${t('youWon')} <strong>NT$ ${amount.toLocaleString()}</strong>`;
+    msg.innerHTML = `${t('youWon')} <strong>CA$ ${amount.toLocaleString()}</strong>`;
   } else {
     msg.className = 'result-msg show lose';
     msg.textContent = `${t('noWin')} ${t('noWinSub')}`;
